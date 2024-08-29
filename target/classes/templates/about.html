@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>About Us - Disaster Relief Service</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Custom CSS -->
+<style>
+    /* General Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+}
+
+.logo {
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 800;
+    color: #080e8e;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .logo:hover {
+    transform: scale(0.8);
+  }
+  
+  
+  .p-1 {
+    font-size: 30px;
+    margin-right: 2rem;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .p-2 {
+    font-size: 30px;
+    color: #bbb;
+    position: absolute;
+    top: 0.4rem;
+    left: 0.5rem;
+  }
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.nav-link {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+}
+
+.nav-link.active {
+    color: #007bff;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+/* Features Section */
+.feature {
+    padding: 5rem 0;
+}
+
+.feature .d-flex {
+    align-items: center;
+    justify-content: center;
+}
+
+.feature .d-flex h5 {
+    margin: 0 0 0 1rem;
+}
+
+.feature .display-1 {
+    font-size: 3rem;
+}
+
+/* About Section */
+.about {
+    padding: 5rem 0;
+}
+
+.about-text {
+    padding: 2rem;
+}
+
+.section-title h1 {
+    font-size: 2.5rem;
+}
+
+.btn-lg-square {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Team Section */
+.team-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-item:hover {
+    transform: translateY(-5px);
+}
+
+.team-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-item:hover img {
+    transform: scale(1.1);
+}
+
+.team-social {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.team-item:hover .team-social {
+    opacity: 1;
+}
+
+.team-social .btn {
+    margin: 0.25rem 0;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+
+.d-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-left {
+    justify-content: flex-start;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.border-bottom {
+    border-bottom: 1px solid white;
+    text-decoration: none;
+}
+
+.border-bottom:hover {
+    color: #ddd; 
+}
+
+<!--footer-->
+.section-5 {
+  width: 100%;
+}
+
+.section-5-top {
+  width: 100%;
+  background-color: #f3f7fa;
+  text-align: center;
+  padding: 7rem 0;
+}
+
+.section-5-top-heading {
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin-bottom: 4rem;
+}
+
+.hover-effect1 {
+  min-height: 20px;
+  background: #F44336;
+  text-align: center;
+}
+
+.hover-effect1 ul {
+  padding-top: 1px;
+}
+
+.hover-effect1 ul li {
+  display: inline-block;
+}
+
+.hover-effect1 ul li a {
+  font-size: 30px;
+  text-align: center;
+  color: #fff;
+  margin: 0px 10px;
+  line-height: 50px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: #dc3545;
+  -webkit-transition: all .6s ease;
+  -moz-transition: all .6s ease;
+  -ms-transition: all .6s ease;
+  -o-transition: all .6s ease;
+  transition: all .6s ease;
+}
+
+.hover-effect1 ul li:hover a {
+  border-radius: 50%;
+  background: #dc3545;
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.copyright {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+</style>
+</head>
+
+<body>
+
+    <div class="container-fluid bg-dark text-light p-0">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-6 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small>kolkata</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <small class="far fa-clock text-primary me-2"></small>
+                    <small>Mon - Fri : 09 AM - 09 PM</small>
+                </div>
+            </div>
+            <div class="col-lg-6 px-5 text-end">
+                <div class="h-100 d-inline-flex align-items-center me-4">
+                    <small class="fa fa-phone-alt text-primary me-2"></small>
+                    <small>123456</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <a class="btn btn-link text-light" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-link text-light" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-link text-light" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-link text-light" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <div class="navbar-logo logo" a href="/" style="margin-top: -9px;">
+            <img class="p1" src="/images/logo.png" alt="Logo" style="width: 115; height: 90px;">
+
+            Support Hub
+        </div></a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="/" class="nav-item nav-link active">Home</a>
+
+            </div>
+            <a href="https://www.nids.mod.go.jp/english/event/symposium/pdf/2011/e_03.pdf"
+                class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get A Quote<i
+                    class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+
+
+    <!-- About Start -->
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+        <div class="container about px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="/images/police.jpg"
+                            style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 pe-lg-0">
+                        <div class="section-title text-start">
+                            <h1 class="display-5 mb-4">About Us</h1>
+                        </div>
+                        <p class="mb-4 pb-2">Providing immediate and comprehensive disaster relief services to ensure
+                            the safety and well-being of our heroes and their loved ones.</p>
+                        <div class="row g-4 mb-4 pb-3">
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-lg-square bg-primary rounded-circle">
+                                        <i class="fa fa-check text-white"></i>
+                                    </div>
+                                    <span class="ms-4">Emergency Response</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-lg-square bg-primary rounded-circle">
+                                        <i class="fa fa-check text-white"></i>
+                                    </div>
+                                    <span class="ms-4">Relief Distribution</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-lg-square bg-primary rounded-circle">
+                                        <i class="fa fa-check text-white"></i>
+                                    </div>
+                                    <span class="ms-4">Community Support</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-lg-square bg-primary rounded-circle">
+                                        <i class="fa fa-check text-white"></i>
+                                    </div>
+                                    <span class="ms-4">Rehabilitation</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-primary rounded-pill py-3 px-5">Request Assistance</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Team Start -->
+    <section id="con">
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                    <h5 class="fw-bold text-primary text-uppercase">Team Members</h5>
+                    <h1 class="mb-0">Professional Staff Ready to Support You</h1>
+                </div>
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item bg-light rounded overflow-hidden">
+                            <div class="team-img position-relative overflow-hidden">
+                                <img class="img-fluid w-100" src="/images/suraj.jpeg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href="#"><i
+                                            class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href="#"><i
+                                            class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href="#"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href="#"><i
+                                            class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center py-4">
+                                <h4 class="text-primary">Suraj Kumar</h4>
+                                <p class="text-uppercase m-0">Emergency Coordinator</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="team-item bg-light rounded overflow-hidden">
+                            <div class="team-img position-relative overflow-hidden">
+                                <img class="img-fluid w-100" src="" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href="#"><i
+                                            class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href="#"><i
+                                            class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href="#"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href="#"><i
+                                            class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center py-4">
+                                <h4 class="text-primary">Gorachand Banerjee</h4>
+                                <p class="text-uppercase m-0">Logistics Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="team-item bg-light rounded overflow-hidden">
+                            <div class="team-img position-relative overflow-hidden">
+                                <img class="img-fluid w-100" src="/images/raju.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href="#"><i
+                                            class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href="#"><i
+                                            class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href="#"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href="#"><i
+                                            class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center py-4">
+                                <h4 class="text-primary">Raju Kumar</h4>
+                                <p class="text-uppercase m-0">Field Officer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="team-item bg-light rounded overflow-hidden">
+                            <div class="team-img position-relative overflow-hidden">
+                                <img class="img-fluid w-100" src="/images/sumit.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href="#"><i
+                                            class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href="#"><i
+                                            class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href="#"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href="#"><i
+                                            class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center py-4">
+                                <h4 class="text-primary">Sumit Kayal</h4>
+                                <p class="text-uppercase m-0">Communication Specialist</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="main"></div>
+    <div class="main"></div>
+    <footer id="Footer" style="background-color:#b3b3cc;"
+        class="page-footer font-small stylish-color-dark pt-4 medium-font">
+        <div style="background-color:#b3b3cc;" class="container text-center text-md-left">
+            <div class="row">
+                <div class="col-md-4 mx-auto">
+                    <!-- Content -->
+                    <h5 class="text-uppercase font-weight-bold mt-3 mb-4" style="font-size: 24px;">Our Aim</h5>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 70px;">
+                    <p> Our goal is to support those suffering from the loss of a loved one due to battle casualties.
+                        This assistance is crucial for bereaved families, addressing financial, educational, medical
+                        needs, and encouraging volunteer work.</p>
+                </div>
+                <hr class="clearfix w-100 d-md-none">
+                <div id="link10" class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h5 class="text-uppercase font-weight-bold mt-3 mb-4" style="font-size: 24px;">Services</h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 70px;">
+                        <p>
+                            <a href="#!">Donate </a>
+                        </p>
+                        <p>
+                            <a href="#!">Community</a>
+                        </p>
+                        <p>
+                            <a href="#!">Volunteer</a>
+                        </p>
+                        <p>
+                            <a href="#!">Memorial</a>
+                        </p>
+                        <p>
+                            <a href="#!">About Us</a>
+                        </p>
+                </div>
+                <hr class="clearfix w-100 d-md-none">
+                <div id="link10" class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h5 class="text-uppercase font-weight-bold mt-3 mb-4" style="font-size: 24px;">Useful links</h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 70px;">
+                        <p>
+                            <a href="https://armedforceshub.com/">Your Account</a>
+                        </p>
+                        <!-- <p> -->
+                        <!-- <a href="#!">Become an Affiliate</a>
+              </p>
+              <p>
+                <a href="#!">Shipping Rates</a>
+               </p> -->
+                        <p>
+                            <a href="/help/index.html">Help</a>
+                        </p>
+                </div>
+                <hr class="clearfix w-100 d-md-none">
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h5 class="text-uppercase font-weight-bold mt-3 mb-4" style="font-size: 24px;">Contact</h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p>
+                            <i class="fas fa-home mr-3"></i> Howrah, West Bengal.
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope mr-3"></i> militarysupporthub@mail.com
+                        </p>
+                        <p>
+                            <i class="fas fa-phone mr-3"></i> + 91 9709781081
+                        </p>
+                        <p>
+                            <i class="fas fa-print mr-3"></i> + 91 6290064231
+                        </p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!-- Call to action -->
+        <ul style="background-color:#b3b3cc;" class="list-unstyled list-inline text-center py-2">
+            <li class="list-inline-item">
+                <h5 class="mb-1" style="font-size: 24px;">Register for free</h5>
+            </li>
+            <li class="list-inline-item">
+                <a href="home.html" class="btn btn-outline-primary btn-rounded" style="font-size: 18px;">Sign up!</a>
+            </li>
+        </ul>
+        <hr>
+        <!-- Social buttons -->
+        <div class="hover-effect1">
+            <ul style="background-color:#b3b3cc;" class="list-unstyled list-inline text-center">
+                <li class="list-inline-item">
+                    <a href="https://www.facebook.com/codewithfaraz" title="Facebook"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.twitter.com/codewithfaraz" title="Twitter"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.instagram.com/codewithfaraz" title="Instagram"><i
+                            class="fa fa-instagram"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.youtube.com/@codewithfaraz" title="Youtube"><i class="fa fa-youtube"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#." title="Github"><i class="fa fa-github"></i></a>
+                </li>
+            </ul>
+        </div>
+        <!-- Copyright -->
+        <div style="background-color:#b3b3cc;" class="footer-copyright text-center py-3">
+            Copyright© 2024: Design and Devloped by Tech Titans
+        </div>
+    </footer>
+
+
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/js/amain.js"></script>
+
+    <!-- Template Javascript -->
+</body>
+
+</html>

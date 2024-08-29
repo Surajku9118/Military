@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improved Online Donation Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+      <!-- END of HTML Coding... -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Add this line in the <head> section of your HTML -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+ 
+ 
+ 
+ 
+    
+    
+    <style>
+        .logo {
+    font-size: 2.5rem;
+    font-style: italic;
+    font-weight: 800;
+    color: #080e8e;
+    position: relative;
+    cursor: pointer;
+  }
+  .logo:hover{
+    transform: scale(0.8);
+  }
+  
+  
+  .p-1 {
+    font-size: 2rem;
+    margin-right: 2rem;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .p-2 {
+    font-size: 2rem;
+    color: #bbb;
+    position: absolute;
+    top: 0.4rem;
+    left: 0.5rem;
+  }
+  
+  .blue-btn {
+    width: 35rem;
+    height: 5rem;
+    background-color: #081361;
+    color: #fff;
+    border-radius: 3rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+  .blue-btn:hover{
+    background-color: white;
+    color: #032181;
+  }
+  
+  
+      
+        .info-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .header {
+            background-color: #545454;
+            padding: 10px;
+            color: white;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .note-section {
+            border: 1px solid green;
+            padding: 10px;
+            margin: 20px 0;
+        }
+        .note-section p {
+            color: red;
+            margin: 0;
+        }
+        .red-asterisk {
+            color: red;
+        }
+        .small-text {
+            font-size: 12px;
+            color: #777;
+        }
+        #terms {
+            height: 100px;
+            resize: none;
+        }
+        #confirmationModal .modal-body table {
+            width: 100%;
+        }
+        #confirmationModal .modal-body table th {
+            width: 30%;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+  <!-- Topbar Start -->
+  <div class="container-fluid bg-dark text-light p-0">
+    <div class="row gx-0 d-none d-lg-flex">
+      <div class="col-lg-6 px-5 text-start">
+        <div class="h-100 d-inline-flex align-items-center me-4">
+          <small class="fa fa-map-marker-alt text-primary me-2"></small>
+          <small>kolkata</small>
+        </div>
+        <div class="h-100 d-inline-flex align-items-center">
+          <small class="far fa-clock text-primary me-2"></small>
+          <small>Mon - Fri : 09 AM - 09 PM</small>
+        </div>
+      </div>
+      <div class="col-lg-6 px-5 text-end">
+        <div class="h-100 d-inline-flex align-items-center me-4">
+          <small class="fa fa-phone-alt text-primary me-2"></small>
+          <small>123456</small>
+        </div>
+        <div class="h-100 d-inline-flex align-items-center">
+          <a class="btn btn-link text-light" href=""><i class="fab fa-facebook-f"></i></a>
+          <a class="btn btn-link text-light" href=""><i class="fab fa-twitter"></i></a>
+          <a class="btn btn-link text-light" href=""><i class="fab fa-linkedin-in"></i></a>
+          <a class="btn btn-link text-light" href=""><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Topbar End -->
+
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+    <div class="navbar-logo logo" a href="#" style="margin-top: -9px;">
+      <img class="p1" src="/images/logo.png" alt="Logo" style="width: 115; height: 90px;">
+
+      Support Hub
+  </div></a>
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto p-4 p-lg-0">
+        <!--<a href="index.html" class="nav-item nav-link">Home</a>-->
+        <a href="/" class="nav-item nav-link text-dark active">Home</a>
+        <!--<a href="#" class="nav-item nav-link">Services</a>
+                    <a href="#" class="nav-item nav-link">Projects</a>
+                    <a href="#" class="nav-item nav-link">Contact</a>-->
+      </div>
+      <a href="https://www.nids.mod.go.jp/english/event/symposium/pdf/2011/e_03.pdf"
+        class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get A Quote<i class="fa fa-arrow-right ms-3"></i></a>
+    </div>
+  </nav>
+
+
+    <!-- Hero Section -->
+    <div class="section flip-section secondary-bg" style="background-image: url('images/volenteer (2).jpeg')" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mx-auto text-center">
+                    <span class="subheading-white mb-3 text-white" data-aos="fade-up">Support Our Troops</span>
+                    <h3 class="mb-4 heading text-white" data-aos="fade-up">Join Us in Helping Our Military Families</h3>                    
+                    <div style="height:30px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+        <div class="info-section">
+            <p>
+                Prime Minister's National Relief Fund (PMNRF) accepts voluntary contributions from Individuals, Organizations,
+                Trusts, Companies, and Institutions, etc. All contributions towards PMNRF are exempt from Income Tax under section
+                80(G). It is informed that Prime Minister's National Relief Fund (PMNRF) does not collect any money through SMS/Missed
+                call services or through any such service provider. It is advised that any such Calls/Messages should not be entertained.
+            </p>
+            <div class="alert alert-primary">
+                <strong>The PAN number of PMNRF is XXXXXXX637Q</strong>
+            </div>
+            <div class="alert alert-success">
+                <p>
+                    In order to facilitate speedy issue of 80(G) Income Tax receipts, donors are advised to provide the transaction
+                    details of donations deposited directly in any of the PMNRF collection banks along with the address of the donor to
+                    this office through email at pmnrf[at]gov[dot]in.
+                </p>
+                <p>
+                    Donors making donations through PMNRF online portal are advised not to make repeated transactions, if the amount
+                    has been debited from the account but the message appears as "Transaction failure/pending confirmation from bank"
+                    at the end of the process.
+                </p>
+            </div>
+        </div>
+
+        <div class="header">
+            <i class="fas fa-pencil-alt"></i> PMNRF Online Donation Form
+        </div>
+
+        <div class="note-section"><marquee>
+            <p>
+                Note: In case of any error during transaction, please wait for 72 hours before initiating a new transaction.
+            </p></marquee>
+        </div>
+
+            <form th:action="@{/donate}" th:object="${donationForm}" method="post" id="donationForm">
+            <div class="" style="width:60%; position:center; margin-left:20%; border-style: inset;">
+            <h3>Personal Details</h3>
+            <div style="margin:5px 4px 6px 10px">
+            <div class="row mb-3" >
+                <div class="col-md-4">
+                    <label for="title" class="form-label">Title <span class="red-asterisk">*</span></label>
+                    <select id="title" name="title" class="form-select" required>
+                        <option value="Mr.">Mr.</option>
+                        <option value="Mrs.">Mrs.</option>
+                        <option value="Ms.">Ms.</option>
+                        <option value="Dr.">Dr.</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="firstName" class="form-label">First Name <span class="red-asterisk">*</span></label>
+                    <input type="text" id="firstName" name="firstName" class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" class="form-control">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email <span class="red-asterisk">*</span></label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="phoneNumber" class="form-label">Phone Number <span class="red-asterisk">*</span></label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" pattern="\d{10}" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+    <div class="col-md-4">
+        <label for="country" class="form-label">Country <span class="red-asterisk">*</span></label>
+        <select id="country" name="country" class="form-select" required>
+            <option value="India">India</option>
+            <!-- Add more countries if necessary -->
+        </select>
+    </div>
+    <div class="col-md-4">
+        <label for="state" class="form-label">State <span class="red-asterisk">*</span></label>
+        <select id="state" name="state" class="form-select" required>
+            <!-- States will be populated dynamically -->
+        </select>
+    </div>
+    <div class="col-md-4">
+        <label for="district" class="form-label">District <span class="red-asterisk">*</span></label>
+        <select id="district" name="district" class="form-select" required>
+            <!-- Districts will be populated dynamically -->
+        </select>
+    </div>
+</div>
+
+
+            <div class="mb-3">
+                <label for="address" class="form-label">Address <span class="red-asterisk">*</span></label>
+                <textarea id="address" name="address" class="form-control" required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="pincode" class="form-label">Pincode <span class="red-asterisk">*</span></label>
+                <input type="text" id="pincode" name="pincode" class="form-control" pattern="\d{6}" required>
+            </div>
+
+            <h3>Payment Details</h3>
+            <div class="mb-3">
+                <label for="amount" class="form-label">Amount* (₹):</label>
+                <input type="number" id="amount" name="amount" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="pan" class="form-label">PAN Number:</label>
+                <input type="text" id="pan" name="pan" class="form-control" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}">
+                <small class="form-text text-muted">Format: ABCDE1234F</small>
+            </div>
+
+            <div class="mb-3">
+                <label for="captcha" class="form-label">Captcha*:</label>
+                <img src="/api/placeholder/150/50" alt="Captcha Image" class="mb-2">
+                <input type="text" id="captcha" name="captcha" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="terms" class="form-label">Terms of use</label>
+                <textarea id="terms" class="form-control" readonly>
+Terms of use content goes here...
+1. All donations are non-refundable.
+2. Donors are advised to verify the details before making any payments.
+3. Donations are exempted under section 80(G) of the Income Tax Act.
+4. Please ensure that your PAN details are correct for tax exemption purposes.
+                </textarea>
+            </div>
+
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+                <label class="form-check-label" for="agreeTerms">I agree to the terms and conditions</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Donate Now</button>
+        </div>
+        </div>
+        </form>
+            <!-- Section 5 -->
+    <div class="main"></div>
+    <footer id="Footer" style="background-color:#b3b3cc;"
+      class="page-footer font-small stylish-color-dark pt-4 medium-font">
+      <div style="background-color:#b3b3cc;" class="container text-center text-md-left">
+        <div class="row">
+          <div class="col-md-4 mx-auto">
+            <!-- Content -->
+            <h5 class="text-uppercase font-weight-bold mt-3 mb-4" style="font-size: 24px;">Our Aim</h5>
+            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 70px;">
+           <p> Our goal is to support those suffering from the loss of a loved one due to battle casualties. This assistance is crucial for bereaved families, addressing financial, educational, medical needs, and encouraging volunteer work.</p>
+          </div>
+          <hr class="clearfix w-100 d-md-none">
+          <div id="link10" class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h5 class="text-uppercase font-weight-bold mt-3 mb-4" style="font-size: 24px;">Services</h6>
+              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 70px;">
+              <p>
+                <a href="#!">Donate </a>
+              </p>
+              <p>
+                <a href="#!">Community</a>
+              </p>
+              <p>
+                <a href="#!">Volunteer</a>
+              </p>
+              <p>
+                <a href="#!">Memorial</a>
+              </p>
+              <p>
+                <a href="#!">About Us</a>
+              </p>
+          </div>
+          <hr class="clearfix w-100 d-md-none">
+          <div id="link10" class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h5 class="text-uppercase font-weight-bold mt-3 mb-4" style="font-size: 24px;">Useful links</h6>
+              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 70px;">
+              <p>
+                <a href="https://armedforceshub.com/">Your Account</a>
+              </p>
+              <!-- <p> -->
+                <!-- <a href="#!">Become an Affiliate</a>
+              </p>
+              <p>
+                <a href="#!">Shipping Rates</a>
+               </p> -->
+               <p>
+                <a href="/help/index.html">Help</a>
+              </p>
+          </div>
+          <hr class="clearfix w-100 d-md-none">
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h5 class="text-uppercase font-weight-bold mt-3 mb-4" style="font-size: 24px;">Contact</h6>
+              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <p>
+                <i class="fas fa-home mr-3"></i> Howrah, West Bengal.
+              </p>
+              <p>
+                <i class="fas fa-envelope mr-3"></i> militarysupporthub@mail.com
+              </p>
+              <p>
+                <i class="fas fa-phone mr-3"></i> + 91 9709781081
+              </p>
+              <p>
+                <i class="fas fa-print mr-3"></i> + 91 6290064231
+              </p>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <!-- Call to action -->
+      <ul style="background-color:#b3b3cc;" class="list-unstyled list-inline text-center py-2">
+        <li class="list-inline-item">
+          <h5 class="mb-1" style="font-size: 24px;">Register for free</h5>
+        </li>
+        <li class="list-inline-item">
+          <a href="home.html" class="btn btn-outline-primary btn-rounded" style="font-size: 18px;">Sign up!</a>
+        </li>
+      </ul>
+      <hr>
+    <!-- Social buttons -->
+<!-- Social buttons -->
+<div class="hover-effect1">
+  <ul style="background-color:#b3b3cc;" class="list-unstyled list-inline text-center">
+    <li class="list-inline-item">
+      <a href="https://www.facebook.com/codewithfaraz" title="Facebook" aria-label="Facebook">
+        <i class="fa fa-facebook"></i>
+        <span class="sr-only">Facebook</span>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a href="https://www.twitter.com/codewithfaraz" title="Twitter" aria-label="Twitter">
+        <i class="fa fa-twitter"></i>
+        <span class="sr-only">Twitter</span>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a href="https://www.instagram.com/codewithfaraz" title="Instagram" aria-label="Instagram">
+        <i class="fa fa-instagram"></i>
+        <span class="sr-only">Instagram</span>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a href="https://www.youtube.com/@codewithfaraz" title="YouTube" aria-label="YouTube">
+        <i class="fa fa-youtube"></i>
+        <span class="sr-only">YouTube</span>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a href="https://github.com/codewithfaraz" title="GitHub" aria-label="GitHub">
+        <i class="fa fa-github"></i>
+        <span class="sr-only">GitHub</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+      <!-- Copyright -->
+      <div style="background-color:#b3b3cc;" class="footer-copyright text-center py-3">
+        Copyright© 2024: Design and Devloped by Tech Titans
+      </div>
+    </footer>
+
+
+
+    <!---Login from--->
+
+
+
+    <!--login from-->
+
+
+    <!--About us-->
+
+
+
+
+
+
+
+    <!-- END of HTML Coding... -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+
+        <!-- Success Message -->
+        <div id="successMessage" class="alert alert-success mt-3" style="display: none;">
+            <strong>Thank you for your donation!</strong> Your donation has been successfully submitted.
+        </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Example data for states and districts
+        const data = {
+            "India": {
+                "Maharashtra": ["Mumbai", "Pune", "Nagpur"],
+                "Karnataka": ["Bangalore", "Mysore", "Mangalore"],
+                "Tamil Nadu": ["Chennai", "Coimbatore", "Madurai"]
+            }
+            // Add more countries and states as needed
+        };
+
+        const countrySelect = document.getElementById("country");
+        const stateSelect = document.getElementById("state");
+        const districtSelect = document.getElementById("district");
+
+        // Populate states based on selected country
+        countrySelect.addEventListener("change", function () {
+            const selectedCountry = this.value;
+            const states = data[selectedCountry];
+            stateSelect.innerHTML = '<option value="">Select State</option>'; // Reset state options
+            districtSelect.innerHTML = '<option value="">Select District</option>'; // Reset district options
+
+            if (states) {
+                Object.keys(states).forEach(state => {
+                    const option = document.createElement("option");
+                    option.value = state;
+                    option.textContent = state;
+                    stateSelect.appendChild(option);
+                });
+            }
+        });
+
+        // Populate districts based on selected state
+        stateSelect.addEventListener("change", function () {
+            const selectedState = this.value;
+            const selectedCountry = countrySelect.value;
+            const districts = data[selectedCountry][selectedState];
+            districtSelect.innerHTML = '<option value="">Select District</option>'; // Reset district options
+
+            if (districts) {
+                districts.forEach(district => {
+                    const option = document.createElement("option");
+                    option.value = district;
+                    option.textContent = district;
+                    districtSelect.appendChild(option);
+                });
+            }
+        });
+
+        // Trigger the change event for initial population
+        countrySelect.dispatchEvent(new Event("change"));
+    });
+
+    </script>
+</body>
+</html>
